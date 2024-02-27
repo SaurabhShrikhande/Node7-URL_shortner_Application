@@ -44,7 +44,7 @@ app.listen(5000, () => {
 
 
 const app = express();
-const PORT = 5000;
+const PORT = 5000 || process.env.PORT;
 
 // In-memory database to store URL mappings
 const urlDatabase = {};
@@ -83,7 +83,7 @@ app.get('/:shortUrl', (req, res) => {
 });
 
 // Start the server
-app.listen(PORT, () => {
+app.listen(PORT , () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
 
